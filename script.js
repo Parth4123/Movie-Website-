@@ -1,5 +1,4 @@
-import dotenv from "dotenv";
-dotenv.config();
+
 const APILINK = "https://api.themoviedb.org/3/discover/movie?sort_by=popularity.desc&api_key=205f18a362cc52839a1f2813405b1243&page=1";
 const IMG_PATH ="https://image.tmdb.org/t/p/w1280";
 const SEARCH_API = "https://api.themoviedb.org/3/search/movie?&api_key=205f18a362cc52839a1f2813405b1243&query="
@@ -33,7 +32,7 @@ function returnMovies(url){
 
             const center = document.createElement('center');
 
-            title.innerHTML = `${element.title}`;
+            title.innerHTML = `${element.title}<br><a href="Reviews.html?id=${element.id}&title=${element.title}">Reviews</a>`;
             image.src = IMG_PATH + element.poster_path;
 
             center.appendChild(image);
